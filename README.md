@@ -59,18 +59,7 @@ This repository (Pokedex) is a clone of a Pokedex-style application implemented 
 3. Build the project:
 
    npm run build
-
-## Scripts
-
-The following scripts are available from package.json:
-
-- `npm run build` — compile TypeScript sources using `tsc` (generates `dist/`)
-- `npm run start` — run the compiled app (`node dist/main.js`)
-- `npm run dev` — compile and run once (`npx tsc && node dist/main.js`)
-- `npm run test` — run tests with Vitest (`vitest --run`)
-
-If your project is intended to be a long-running development server or SPA hot-reload environment, consider replacing the `dev` script with a watcher (`tsc -w`) or using a bundler with dev server.
-
+   
 ## Project structure
 
 A typical layout for a TypeScript project is shown below. Adjust these notes to match the actual repo layout if it differs.
@@ -83,15 +72,6 @@ A typical layout for a TypeScript project is shown below. Adjust these notes to 
 
 If your code places the main entry file at a different path, update `package.json` and scripts accordingly.
 
-## How to use
-
-1. Build the project: `npm run build`
-2. Run the compiled application: `npm run start`
-
-For development, use: `npm run dev` which will compile and run the current build.
-
-If the project is a frontend SPA that requires a browser, open the generated `index.html` (if present) in a browser or serve the `dist/` directory via a static file server.
-
 ## Testing
 
 Run tests with:
@@ -100,25 +80,6 @@ Run tests with:
 
 Vitest is included as a dev dependency in package.json. Add test files under a `test/` or `src/` directory and use the `.test.ts` or `.spec.ts` naming convention.
 
-## Contributing
-
-Contributions are welcome. A suggested workflow:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feat/your-feature`.
-3. Make changes and add tests.
-4. Build and run tests: `npm run build && npm run test`.
-5. Open a pull request describing your changes.
-
-Please follow TypeScript best practices, add or update tests for new behavior, and keep commits focused.
-
-## License
-
-This repository does not include a license file. If you intend to open-source it, add a LICENSE file (for example, the MIT license) and update this section with the license name.
-
-## Acknowledgements
-
-- This project was built as a learning exercise and may reference Pokémon data or public APIs for educational purposes.
 
 ## Contact
 
