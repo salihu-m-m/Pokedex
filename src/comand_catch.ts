@@ -15,6 +15,7 @@ export async function commandCatch(state: State, ...args: string[]) {
          }
          if (chance <= 40){
             console.log(`${pokemonName} was caught!`)
+            console.log(`you may now inspect ${pokemonName} with the inspect command`)
             state.caughtPokemon[pokemon.name] = pokemon;
          }
     }catch(error){

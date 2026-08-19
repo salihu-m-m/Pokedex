@@ -1,16 +1,34 @@
-Pokedex > Throwing a Pokeball at pidgey...
-pidgey was caught!
-Pokedex > Name: pidgey
-Height: 3
-Weight: 18
-Stats:
-  -hp: 40
-  -attack: 45
-  -defense: 40
-  -special-attack: 35
-  -special-defense: 35
-  -speed: 56
-Types:
-  - normal
-  - flying
+Pokedex > Throwing a Pokeball at weedle...
+weedle was caught!
+you may now inspect weedle with the inspect command
+Pokedex > Throwing a Pokeball at magikarp...
+magikarp was caught!
+you may now inspect magikarp with the inspect command
+Pokedex > Throwing a Pokeball at caterpie...
+caterpie was caught!
+you may now inspect caterpie with the inspect command
+Pokedex > [TypeError: fetch failed] {
+  [cause]: AggregateError [ETIMEDOUT]: 
+      at internalConnectMultiple (node:net:1194:18)
+      at internalConnectMultiple (node:net:1270:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1811:5)
+      at listOnTimeout (node:internal/timers:607:11)
+      at process.processTimers (node:internal/timers:541:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [ [Error], [Error], [Error], [Error] ]
+  }
+}
+Error fetching Pokemon: fetch failed
+Pokedex > Throwing a Pokeball at fletchling...
+fletchling was caught!
+you may now inspect fletchling with the inspect command
+Pokedex > Throwing a Pokeball at bunnelby...
+bunnelby was caught!
+you may now inspect bunnelby with the inspect command
+Pokedex > Your Pokedex:
+weedle
+magikarp
+caterpie
+fletchling
+bunnelby
 Pokedex > Closing the Pokedex... Goodbye!
