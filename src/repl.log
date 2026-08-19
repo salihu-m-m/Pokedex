@@ -1,25 +1,16 @@
-Pokedex > [TypeError: fetch failed] {
-  [cause]: AggregateError [ETIMEDOUT]: 
-      at internalConnectMultiple (node:net:1194:18)
-      at internalConnectMultiple (node:net:1270:5)
-      at Timeout.internalConnectMultipleTimeout (node:net:1811:5)
-      at listOnTimeout (node:internal/timers:607:11)
-      at process.processTimers (node:internal/timers:541:7) {
-    code: 'ETIMEDOUT',
-    [errors]: [ [Error], [Error], [Error], [Error] ]
-  }
-}
-Error fetching locations: fetch failed
-Pokedex > Exploring pastoria-city-area...
-Found Pokemon:
- - tentacool
- - tentacruel
- - magikarp
- - gyarados
- - remoraid
- - octillery
- - wingull
- - pelipper
- - shellos
- - gastrodon
+Pokedex > Throwing a Pokeball at pidgey...
+pidgey was caught!
+Pokedex > Name: pidgey
+Height: 3
+Weight: 18
+Stats:
+  -hp: 40
+  -attack: 45
+  -defense: 40
+  -special-attack: 35
+  -special-defense: 35
+  -speed: 56
+Types:
+  - normal
+  - flying
 Pokedex > Closing the Pokedex... Goodbye!

@@ -9,11 +9,11 @@ export async function commandExplore(state:State, ...args: string[]){
     try{
         const location = await state.pokeAPI.fetchLocation(locationName)
         console.log(`Exploring ${locationName}...`)
-        console.log("Found Pokemon:")
+        console.log("Found Pokemons:")
         for (const encounter of location.pokemon_encounters) {
             console.log(` - ${encounter.pokemon.name}`)
         }
     }catch (error){
-        console.log((error as Error).message);
+        console.log((error as Error).message)
     }
 }

@@ -3,6 +3,9 @@ import type { CLICommand } from "./state.js";
 import { commandHelp } from "./command_help.js";
 import { commandMapForward, commandMapBack } from "./command_map.js";
 import { commandExplore } from "./command_explore.js";
+import { commandCatch } from "./comand_catch.js";
+import { commandInspect } from "./command_inspect.js";
+import { inspect } from "node:util";
 
 export function getCommands(): Record<string, CLICommand> {
   return {
@@ -30,6 +33,16 @@ export function getCommands(): Record<string, CLICommand> {
       name: "explore",
       description: "explore locations",
       callback: commandExplore
+    },
+    catch: {
+      name: "catch",
+      description: "catch pokemons",
+      callback: commandCatch,
+    },
+    inspect: {
+      name: "inspect",
+      description: "inspect pokemon",
+      callback: commandInspect
     }
   }
 }
