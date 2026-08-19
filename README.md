@@ -81,6 +81,125 @@ Run tests with:
 Vitest is included as a dev dependency in package.json. Add test files under a `test/` or `src/` directory and use the `.test.ts` or `.spec.ts` naming convention.
 
 
-## Contact
+## Scripts
 
-If you have questions about this project, open an issue or contact the repository owner: https://github.com/salihu-m-m
+The following scripts are available from package.json:
+
+- `npm run build` — compile TypeScript sources using `tsc` (generates `dist/`)
+- `npm run start` — run the compiled app (`node dist/main.js`)
+- `npm run dev` — compile and run once (`npx tsc && node dist/main.js`)
+- `npm run test` — run tests with Vitest (`vitest --run`)
+
+If your project is intended to be a long-running development server or SPA hot-reload environment, consider replacing the `dev` script with a watcher (`tsc -w`) or using a bundler with dev server.
+
+### Commands — what they do and example outputs
+
+This section explains each npm script, what it runs, and shows example console output you might see when you run it. Actual output depends on your local environment and the app's runtime behaviour.
+
+- npm run build
+  - What it does: Runs `npx tsc` to compile the TypeScript source files in `src/` into JavaScript in the `dist/` directory using your `tsconfig.json` settings.
+  - When to run: Before running `npm start` or when you want to produce distributable JavaScript files.
+  - Example command:
+
+    npm run build
+
+  - Example output (typical success — `tsc` is often silent on success):
+
+    > npx tsc
+
+    (no output on success — compiled files are written to `dist/`)
+
+  - Example output (type error):
+
+    > npx tsc
+    src/main.ts:12:5 - error TS2322: Type 'string' is not assignable to type 'number'.
+
+    Found 1 error.
+
+- npm run start
+  - What it does: Runs `node dist/main.js`. This executes the compiled JavaScript entry file. Ensure you have run `npm run build` first (or use `npm run dev`).
+  - When to run: To run the compiled application in production or locally after building.
+  - Example command:
+
+    npm run start
+
+  - Example output (varies by app; here's a neutral example):
+
+    > node dist/main.js
+    Server listening on http://localhost:3000
+    Loaded 151 Pokémon into memory
+
+  - Notes: If `dist/main.js` is missing or `main.js` throws at runtime you will see a Node error with stack trace.
+
+- npm run dev
+  - What it does: Runs `npx tsc && node dist/main.js`. This compiles the sources then runs the compiled app once.
+  - When to run: For a quick edit-build-run cycle in development when you don't need a file-watcher.
+  - Example command:
+
+    npm run dev
+
+  - Example output (combined build + run):
+
+    > npx tsc
+    (no output on success)
+    > node dist/main.js
+    Server listening on http://localhost:3000
+
+  - Tip: For continuous development consider `tsc -w` (watch) or tools like nodemon to restart on changes.
+
+- npm run test
+  - What it does: Runs Vitest (`vitest --run`) to execute unit tests and report results.
+  - When to run: During development, before commits, or in CI to verify behaviour.
+  - Example command:
+
+    npm run test
+
+  - Example output (typical passing tests):
+
+    > vitest --run
+      ✓ src/pokedex.spec.ts > loads data (20ms)
+      ✓ src/pokedex.spec.ts > finds pokemon by name (5ms)
+
+    Test Files  1 passed (1)
+    Tests       2 passed (2)
+    Snapshots   0 passed (0)
+    Time        0.45s
+
+  - Example output (failing tests):
+
+    > vitest --run
+      ✕ src/pokedex.spec.ts > finds pokemon by name (10ms)
+
+    ● src/pokedex.spec.ts > finds pokemon by name
+
+      expect(received).toEqual(expected) // deep equality
+
+      - Expected
+      + Received
+
+      - "Pikachu"
+      + "Pichu"
+
+    Test Files  1 failed (1)
+    Tests       1 failed, 1 passed (2)
+    Time        0.30s
+
+
+## How to use
+
+1. Build the project: `npm run build`
+2. Run the compiled application: `npm run start`
+
+For development, use: `npm run dev` which will compile and run the current build.
+
+If the project is a frontend SPA that requires a browser, open the generated `index.html` (if present) in a browser or serve the `dist/` directory via a static file server.
+
+## Contributing
+
+Contributions are welcome. A suggested workflow:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feat/your-feature`.
+3. Make changes and add tests.
+4. Build and run tests: `npm run build && npm run test`.
+5. Open a pull request describing your changes.
