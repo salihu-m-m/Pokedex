@@ -43,7 +43,7 @@ export class PokeAPI {
               this.cache.add(url, data)
               return data
         }catch(error){
-          console.log(error)
+          
            throw new Error(`Error fetching locations: ${(error as Error).message}`)
               }
       }
