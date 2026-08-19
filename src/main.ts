@@ -1,9 +1,9 @@
-// repl.js actually refers to repl.ts
-import { startREPL } from "./.repl.js";
-import { commandExit } from "./command_exit.js";
+import { startREPL } from "./repl.js";
+import { initState } from "./state.js";
 
 function main() {
-  startREPL();
+  const state = initState();
+  startREPL(state);
 }
 
 main();
