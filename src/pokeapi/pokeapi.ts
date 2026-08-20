@@ -1,4 +1,4 @@
-import { Cache } from "./pokecache.js";
+import { Cache } from "../cache/pokecache.js";
 
 export class PokeAPI {
   private static readonly baseURL = "https://pokeapi.co/api/v2";
@@ -17,7 +17,6 @@ export class PokeAPI {
   
     try {
         const response = await fetch(url);
-        
         if (!response.ok) {
                 throw new Error(`Response status: ${response.status}`);
 }         const data : ShallowLocations = await response.json()
@@ -62,7 +61,6 @@ export class PokeAPI {
       this.cache.add(url,data)
       return data
     }catch(error){
-      console.log(error)
       throw new Error(`Error fetching Pokemon: ${(error as Error).message}`)
     }
   }    

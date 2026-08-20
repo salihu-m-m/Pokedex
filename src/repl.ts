@@ -1,5 +1,5 @@
 
-import { State } from "./state.js";
+import { State } from "./pokeapi/state.js";
 
 
 

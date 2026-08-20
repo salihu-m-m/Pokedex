@@ -1,5 +1,5 @@
 
-import { State } from "./state.js";
+import { State } from "../pokeapi/state.js";
 
 export async function commandMapForward(state : State){
   const locations =  await state.pokeAPI.fetchLocations(state.nextLocationsURL)

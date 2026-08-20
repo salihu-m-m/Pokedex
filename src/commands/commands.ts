@@ -1,5 +1,5 @@
 import { commandExit } from "./command_exit.js";
-import type { CLICommand } from "./state.js";
+import type { CLICommand } from "../pokeapi/state.js";
 import { commandHelp } from "./command_help.js";
 import { commandMapForward, commandMapBack } from "./command_map.js";
 import { commandExplore } from "./command_explore.js";
@@ -7,6 +7,7 @@ import { commandCatch } from "./comand_catch.js";
 import { commandInspect } from "./command_inspect.js";
 import { inspect } from "node:util";
 import { commandPokedex } from "./command_pokedex.js";
+import {commandBattle} from "./command_battles.js"
 
 export function getCommands(): Record<string, CLICommand> {
   return {
@@ -49,6 +50,11 @@ export function getCommands(): Record<string, CLICommand> {
       name: "pokedex",
       description: "showcase my caught pokemons",
       callback: commandPokedex
+    }, 
+    battle: {
+      name: "battle",
+      description: "simulate battles",
+      callback: commandBattle
     }
   }
 }
